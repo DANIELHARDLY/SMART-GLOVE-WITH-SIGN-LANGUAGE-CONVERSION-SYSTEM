@@ -1,0 +1,499 @@
+void setup() 
+{
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
+  pinMode(A2, INPUT);
+  pinMode(A3, INPUT);
+  pinMode(A4, INPUT);
+  Serial.begin(9600);
+
+   
+}
+int i;
+char RESULT[10];
+int sensorMin1 = 815; 
+int sensorMax1 = 870;
+
+int sensorMin2 = 880; 
+int sensorMax2 = 945;
+
+int sensorMin3 = 780; 
+int sensorMax3 = 790;
+ 
+int sensorMin4 = 840; 
+int sensorMax4 = 925;
+ 
+int sensorMin5 = 750; 
+int sensorMax5 = 760;
+
+float flexADC1,flexADC2,flexADC3,flexADC4 ,flexADC5; 
+float angle1 ,angle2,angle3,angle4,angle5;
+float a,b,c,d,e;
+
+void scan()
+ {
+flexADC1 = analogRead(A0);
+flexADC2 = analogRead(A1);
+flexADC3 = analogRead(A2);
+flexADC4 = analogRead(A3);
+flexADC5 = analogRead(A4);
+
+flexADC1 = constrain(flexADC1,sensorMin1, sensorMax1);
+flexADC2 = constrain(flexADC2,sensorMin2, sensorMax2);
+flexADC3 = constrain(flexADC3,sensorMin3, sensorMax3);
+flexADC4 = constrain(flexADC4,sensorMin4, sensorMax4);
+flexADC5 = constrain(flexADC5,sensorMin5, sensorMax5);
+
+angle1= map(flexADC1, sensorMin1, sensorMax1, 0, 90);
+angle2= map(flexADC2, sensorMin2, sensorMax2, 0, 90);
+angle3= map(flexADC3, sensorMin3, sensorMax3, 0, 90);
+angle4= map(flexADC4, sensorMin4, sensorMax4, 0, 90);
+angle5= map(flexADC5, sensorMin5, sensorMax5, 0, 90); 
+
+a=angle1;
+b=angle2;
+c=angle3;
+d=angle4;
+e=angle5;
+  
+  
+  
+ }
+
+void loop()
+{
+  i=0;
+START:   
+scan();
+
+delay(300);
+Serial.print("angle1 ");
+Serial.println(a);
+delay(300);
+Serial.print("angle2 ");
+Serial.println(b);
+delay(300);
+Serial.print("angle3 ");
+Serial.println(c);
+delay(300);
+Serial.print("angle4 ");
+Serial.println(d);
+delay(300);
+Serial.print("angle5 ");
+Serial.println(e);
+
+
+if (a > 45 && b <45 && c < 45 && d < 45 && e < 45) 
+{
+   goto A;
+}
+
+
+if (a < 45 && b > 45 && c < 45 && d < 45 && e < 45) 
+{
+   goto B;
+}
+
+if (a < 45 && b < 45 && c > 45 && d < 45 && e < 45) 
+{
+   goto C;
+}
+
+if (a < 45 && b < 45 && c < 45 && d > 45 && e < 40) 
+{
+   goto D;
+}
+
+if (a > 45 && b < 45 && c < 45 && d < 45 && e > 45) 
+{
+  goto E;
+}
+
+if (a > 45 && b > 45 && c < 45 && d < 45 && e < 45) 
+{
+   goto F;
+}
+
+if (a > 45 && b < 45 && c > 45 && d < 45 && e < 45) 
+{
+   goto G;
+}
+
+if (a > 45 && b < 45 && c < 45 && d > 45 && e < 45) 
+{
+  goto H;
+}
+
+if (a < 45 && b < 45 && c < 45 && d > 45 && e > 45) 
+{
+   goto I;
+}
+
+if (a < 45 && b < 45 && c > 45 && d > 45 && e > 45) 
+{
+   goto J;
+}
+
+if (a < 45 && b > 45 && c > 45 && d > 45 && e > 45) 
+{
+   goto K;
+}
+
+if (a > 45 && b > 45 && c > 45 && d < 45 && e < 45) 
+{
+  goto L;
+}
+
+if (a > 45 && b > 45 && c > 15 && d > 45 && e < 45) 
+{
+  goto M;
+}
+
+if (a < 45 && b > 45 && c > 45 && d < 45 && e < 45) 
+{
+  goto N;
+}
+
+if (a > 45 && b < 45 && c > 45 && d > 45 && e < 45) 
+{
+  goto O;
+}
+
+if (a > 45 && b > 45 && c < 45 && d < 45 && e > 45) 
+{
+   goto P;
+}
+
+if (a > 45 && b < 45 && c < 45 && d > 45 && e > 45) 
+{
+   goto Q;
+}
+
+if (a > 45 && b > 45 && c < 45 && d > 45 && e < 45) 
+{
+   goto R;
+}
+
+if (a < 45 && b > 45 && c < 45 && d > 45 && e < 45) 
+{
+   goto S;
+}
+
+if (a > 45 && b < 45 && c > 45 && d < 45 && e > 45) 
+{
+   goto T;
+}
+
+if (a < 45 && b > 45 && c < 45 && d > 45 && e > 45) 
+{
+   goto U;
+}
+
+if (a > 45 && b > 45 && c < 45 && d > 45 && e > 45) 
+{
+   goto V;
+}
+
+if (a > 45 && b > 45 && c > 45 && d < 45 && e > 45) 
+{
+    goto W;
+}
+if (a < 45 && b < 45 && c > 45 && d > 45 && e < 45) 
+{
+   goto X;
+}
+if (a < 45 && b > 45 && c > 45 && d > 45 && e < 45) 
+{
+   goto Y;
+}
+if (a > 45 && b < 45 && c > 45 && d > 45 && e > 45) 
+{
+    goto Z;
+}
+if (a > 45 && b > 45 && c > 45 && d > 45 && e > 45) 
+{
+    goto END;
+}
+
+
+
+goto START;
+
+
+A:
+delay(500);
+scan();
+if (a > 45 && b <45 && c < 45 && d < 45 && e < 45) 
+{
+   Serial.println("a");
+   RESULT[i]='A';
+   i++;
+   
+}
+ goto START;
+
+B:
+delay(500);
+scan();
+if (a < 45 && b > 45 && c < 45 && d < 45 && e < 45) 
+{
+   Serial.println("b");
+   RESULT[i]='B';
+   i++;
+}
+ goto START;
+C:
+delay(500);
+scan();
+if (a < 45 && b < 45 && c > 45 && d < 45 && e < 45) 
+{
+   Serial.println("c");
+   RESULT[i]='C';
+   i++;
+}
+ goto START;
+D:
+delay(500);
+scan();
+if (a < 45 && b < 45 && c < 45 && d > 45 && e < 40) 
+{
+   Serial.println("d");
+   RESULT[i]='D';
+   i++;
+}
+ goto START;
+E:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c < 45 && d < 45 && e > 45) 
+{
+   Serial.println("e");
+   RESULT[i]='E';
+   i++;
+}
+ goto START;
+F:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c < 45 && d < 45 && e < 45) 
+{
+   Serial.println("f");
+   RESULT[i]='F';
+   i++;
+}
+ goto START;
+G:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c > 45 && d < 45 && e < 45) 
+{
+   Serial.println("g");
+   RESULT[i]='G';
+   i++;
+}
+ goto START;
+H:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c < 45 && d > 45 && e < 45) 
+{
+   Serial.println("h");
+   RESULT[i]='H';
+   i++;
+}
+ goto START;
+I:
+delay(500);
+scan();
+if (a < 45 && b < 45 && c < 45 && d > 45 && e > 45) 
+{
+   Serial.println("i");
+   RESULT[i]='I';
+   i++;
+}
+ goto START;
+J:
+delay(500);
+scan();
+if (a < 45 && b < 45 && c > 45 && d > 45 && e > 45) 
+{
+   Serial.println("j");
+   RESULT[i]='J';
+   i++;
+}
+ goto START;
+K:
+delay(500);
+scan();
+if (a < 45 && b > 45 && c > 45 && d > 45 && e > 45) 
+{
+   Serial.println("k");
+   RESULT[i]='K';
+   i++;
+}
+ goto START;
+L:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c > 45 && d < 45 && e < 45) 
+{
+   Serial.println("l");
+   RESULT[i]='L';
+   i++;
+}
+ goto START;
+M:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c > 15 && d > 45 && e < 45) 
+{
+   Serial.println("m");
+   RESULT[i]='M';
+   i++;
+}
+ goto START;
+N:
+delay(500);
+scan();
+if (a < 45 && b > 45 && c > 45 && d < 45 && e < 45) 
+{
+   Serial.println("n");
+   RESULT[i]='N';
+   i++;
+}
+ goto START;
+O:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c > 45 && d > 45 && e < 45) 
+{
+   Serial.println("o");
+   RESULT[i]='O';
+   i++;
+}
+ goto START;
+P:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c < 45 && d < 45 && e > 45) 
+{
+   Serial.println("p");
+   RESULT[i]='P';
+   i++;
+}
+ goto START;
+Q:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c < 45 && d > 45 && e > 45) 
+{
+   Serial.println("q");
+   RESULT[i]='Q';
+   i++;
+}
+ goto START;
+R:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c < 45 && d > 45 && e < 45) 
+{
+   Serial.println("r");
+   RESULT[i]='R';
+   i++;
+}
+ goto START;
+S:
+delay(500);
+scan();
+if (a < 45 && b > 45 && c < 45 && d > 45 && e < 45) 
+{
+   Serial.println("s");
+   RESULT[i]='S';
+   i++;
+}
+ goto START;
+T:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c > 45 && d < 45 && e > 45) 
+{
+   Serial.println("t");
+   RESULT[i]='T';
+   i++;
+}
+ goto START;
+U:
+delay(500);
+scan();
+if (a < 45 && b > 45 && c < 45 && d > 45 && e > 45) 
+{
+   Serial.println("u");
+   RESULT[i]='U';
+   i++;
+}
+V: goto START;
+delay(500);
+scan();
+if (a > 45 && b > 45 && c < 45 && d > 45 && e > 45) 
+{
+   Serial.println("v");
+   RESULT[i]='V';
+   i++;
+}
+ goto START;
+W:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c > 45 && d < 45 && e > 45) 
+{
+   Serial.println("w");
+   RESULT[i]='W';
+   i++;
+}
+ goto START;
+X:
+delay(500);
+scan();
+if (a < 45 && b < 45 && c > 45 && d > 45 && e < 45) 
+{
+   Serial.println("x");
+   RESULT[i]='X';
+   i++;
+}
+ goto START;
+Y:
+delay(500);
+scan();
+if (a < 45 && b > 45 && c > 45 && d > 45 && e < 45) 
+{
+   Serial.println("y");
+   RESULT[i]='Y';
+   i++;
+   
+}
+ goto START;
+Z:
+delay(500);
+scan();
+if (a > 45 && b < 45 && c > 45 && d > 45 && e > 45) 
+{
+   Serial.println("z");
+   RESULT[i]='Z';
+   i++;
+   
+}
+ goto START;
+
+END:
+delay(500);
+scan();
+if (a > 45 && b > 45 && c > 45 && d > 45 && e > 45) 
+{
+   Serial.println(RESULT);
+   memset(RESULT, 0, sizeof(RESULT));
+   i=0;
+}
+
+
+
+}
