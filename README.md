@@ -39,4 +39,4 @@ HC-05 (Bluetooth module)
 Frequency of 2.4 GHz ISM band
 Security : Authentication and encryption    
 Modulation :GFSK
-<img src="/repository/assets/employee.png" alt="Employee data" title="SMART GLOVE">
+<img src="https://github.com/DANIELHARDLY/SMART-GLOVE-WITH-SIGN-LANGUAGE-CONVERSION-SYSTEM/blob/main/SMART_GLOVE_USING_ARDUINO_WITH_SIGN_LANGUAGE_RECOGNITION_SYSTEM.jpg" alt="Employee data" title="SMART GLOVE">
