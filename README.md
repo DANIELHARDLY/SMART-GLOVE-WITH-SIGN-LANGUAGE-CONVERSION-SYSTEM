@@ -1,4 +1,5 @@
 # SMART-GLOVE-WITH-SIGN-LANGUAGE-CONVERSION-SYSTEM
+<img src="https://github.com/DANIELHARDLY/SMART-GLOVE-WITH-SIGN-LANGUAGE-CONVERSION-SYSTEM/blob/main/SMART_GLOVE_USING_ARDUINO_WITH_SIGN_LANGUAGE_RECOGNITION_SYSTEM.jpg" alt="Employee data" title="SMART GLOVE">
  In the recent years there has been a rapid increase in the number of hearing impaired and speech disabled victims due to birth defects, oral diseases and accidents.
 Deaf and dumb person have their own language to communicate with us; the only thing is that we need to understand their language. 
 This project aims to create a smart speaking system that helps mute people in conveying the message to regular people using hand motions or gestures.
@@ -39,4 +40,4 @@ HC-05 (Bluetooth module)
 Frequency of 2.4 GHz ISM band
 Security : Authentication and encryption    
 Modulation :GFSK
-<img src="https://github.com/DANIELHARDLY/SMART-GLOVE-WITH-SIGN-LANGUAGE-CONVERSION-SYSTEM/blob/main/SMART_GLOVE_USING_ARDUINO_WITH_SIGN_LANGUAGE_RECOGNITION_SYSTEM.jpg" alt="Employee data" title="SMART GLOVE">
+
